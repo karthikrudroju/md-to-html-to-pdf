@@ -1,0 +1,20 @@
+{
+  "name": "md-to-html",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm run combine && npm run convert && npm run generate",
+    "combine": "node scripts/combine.js",
+    "convert": "node scripts/convert-to-html.js",
+    "generate": "node scripts/generate-pdf.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "puppeteer": "^21.3.8",
+    "showdown": "^2.1.0",
+    "showdown-highlight": "^3.1.0"
+  }
+}
