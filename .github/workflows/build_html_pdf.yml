@@ -22,3 +22,6 @@ jobs:
       run: npm run build
     - name: Attach HTML and PDF files
       uses: actions/download-artifact@v3
+      with:
+        name: book
+        path: output/book.html
