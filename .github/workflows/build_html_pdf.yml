@@ -25,3 +25,6 @@ jobs:
       with:
         name: output
         path: output/
+    - name: usegitpub
+      uses: StartAutomating/GitPub@v0.1.4
+            
