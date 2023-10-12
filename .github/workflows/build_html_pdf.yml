@@ -1,1 +1,22 @@
+name: Build HTML and PDF files
 
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    env:
+      CI: true
+    steps:
+    - name: Setup Action
+      uses: actions/checkout@v3
+    - name: Setup Node
+      uses: actions/setup-node@v3
+      with:
+        node-version: 16.x
+    - name: Install dependencies
+      run: npm install dotenv puppeteer showdown showdown-highlight
+    - name: Run Scripts
+      run: npm run build
