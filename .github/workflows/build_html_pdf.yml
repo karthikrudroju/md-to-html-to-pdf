@@ -43,4 +43,8 @@ jobs:
                 "OutputPath": "docs/_posts"
             }
           }
-      
+    - name: gitpub artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: docs
+        path: docs/_posts
