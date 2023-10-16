@@ -40,11 +40,11 @@ jobs:
                 "Repository": '${{github.repository}}'        
             },
             "Publish-GitPubJekyll": {
-                "OutputPath": "docs/_posts"
+                "OutputPath": "content/"
             }
           }
     - name: gitpub artifact
       uses: actions/upload-artifact@v3
       with:
-        name: docs
-        path: docs/_posts
+        name: content
+        path: content/
