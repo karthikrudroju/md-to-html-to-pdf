@@ -25,26 +25,3 @@ jobs:
       with:
         name: output
         path: output/
-    - name: usegitpub
-      uses: StartAutomating/GitPub@v0.1.4
-      id: GitPub
-      with: 
-        TargetBranch: edits-$([DateTime]::Now.ToString("r").Replace(":","-").Replace(" ", ""))
-        CommitMessage: Posting with GitPub [skip ci]
-        PublishParameters: |
-          {
-            "Get-GitPubIssue": {
-                "Repository": '${{github.repository}}'        
-            },
-            "Get-GitPubRelease": {
-                "Repository": '${{github.repository}}'        
-            },
-            "Publish-GitPubJekyll": {
-                "OutputPath": "content/"
-            }
-          }
-    - name: gitpub artifact
-      uses: actions/upload-artifact@v3
-      with:
-        name: content
-        path: content/
